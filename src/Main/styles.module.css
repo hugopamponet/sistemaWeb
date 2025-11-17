@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.heroContent h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4.0rem;
+    padding-left: 2.5rem;
+}
+
+.heroContent p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    padding: 0 0 1rem 2.5rem;
+}
+
+.heroImage img {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(40%);
+    padding-right: 3.7rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.botaoVermelho {
+    background-color: var(--button);
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+}
+
+.botaoCinza {
+    background-color: var(--button-cinza);
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button-cinza);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+}
