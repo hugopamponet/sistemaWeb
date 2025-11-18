@@ -151,6 +151,56 @@
     align-self: center;
 }
 
-.seminarioCursos {
-    padding: 4rem 2rem;
+.eventoDestaque {
+    padding: 2rem 0 2rem 4.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.todosEventos {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.eventoCard {
+    padding-top: 1rem;
+}
+
+.cardEventos1 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento1);
+    border: 1px solid var(--card-evento1);
+    border-radius: 10px;
+}
+
+.cardEventos1 h2 {
+    padding-left: 2rem;
+}
+
+.cardEventos2 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento2);
+    border: 1px solid var(--card-evento2);
+    border-radius: 10px;
+}
+
+.cardEventos2 h2 {
+    padding-left: 2rem;
+}
+
+.cardEventos3 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento3);
+    border: 1px solid var(--card-evento3);
+    border-radius: 10px;
+}
+
+.cardEventos3 h2 {
+    padding-left: 2rem;
 }

@@ -29,11 +29,11 @@ export function Main() {
       <section className={styles.competicoes}>
         <h2>Próximas Competições</h2>
         <div className={styles.inputsPesquisas}>
-          <input type="text" className="text" placeholder="Estado"/>
-          <input type="text" className="cidade" placeholder="Cidade"/>
-          <input type="text" className="faixa" placeholder="Faixa"/>
-          <input type="text" className="categoria" placeholder="Categoria"/>
-          <input type="text" className="sexo" placeholder="Sexo"/>
+          <input type="text" className="text" placeholder="Estado" />
+          <input type="text" className="cidade" placeholder="Cidade" />
+          <input type="text" className="faixa" placeholder="Faixa" />
+          <input type="text" className="categoria" placeholder="Categoria" />
+          <input type="text" className="sexo" placeholder="Sexo" />
         </div>
         <div className={styles.container}>
           <div className={styles.divulgacoes}>
@@ -80,11 +80,75 @@ export function Main() {
           </div>
         </div>
       </section>
-      <section className={styles.seminarioCursos}>
-        <h2>Seminário e Cursos</h2>
+      <section className={styles.eventoDestaque}>
+        <h2>Eventos em Destaque</h2>
+        <div className={styles.todosEventos}>
+          <div className={styles.eventoCard}>
+            <div className={styles.cardEventos1}>
+              <h3>Campeonato Mundial</h3>
+              <h3>De Jiu-Jitsu</h3>
+            </div>
+          </div>
+          <div className={styles.eventoCard}>
+            <div className={styles.cardEventos2}>
+              <h3>Campeonato Mundial</h3>
+              <h3>De Jiu-Jitsu</h3>
+            </div>
+          </div>
+          <div className={styles.eventoCard}>
+            <div className={styles.cardEventos3}>
+              <h3>Campeonato Mundial</h3>
+              <h3>De Jiu-Jitsu</h3>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className={styles.hero}>
+      <section className={styles.competicoes}>
         <h2>Seminário e Cursos</h2>
+        <div className={styles.container}>
+          <div className={styles.divulgacoes}>
+            <div className={styles.topoCard}>
+              <img
+                src="src/assets/Seminario.png"
+                alt="Professor de Jiu-Jitsu"
+              />
+              <div className={styles.textoCard}>
+                <h3>Seminário Defesa Pessoal</h3>
+                <p>Mestre: Jonathas Meire</p>
+                <p>15 de Dezembro Salvador - Ba</p>
+              </div>
+            </div>
+            <button className={styles.botaoCard}>Participar</button>
+          </div>
+          <div className={styles.divulgacoes}>
+            <div className={styles.topoCard}>
+              <img
+                src="src/assets/Seminario.png"
+                alt="Professor de Jiu-Jitsu"
+              />
+              <div className={styles.textoCard}>
+                <h3>Seminário Defesa Pessoal</h3>
+                <p>Mestre: Jonathas Meire</p>
+                <p>15 de Dezembro Salvador - Ba</p>
+              </div>
+            </div>
+            <button className={styles.botaoCard}>Participar</button>
+          </div>
+          <div className={styles.divulgacoes}>
+            <div className={styles.topoCard}>
+              <img
+                src="src/assets/Seminario.png"
+                alt="Professor de Jiu-Jitsu"
+              />
+              <div className={styles.textoCard}>
+                <h3>Seminário Defesa Pessoal</h3>
+                <p>Mestre: Jonathas Meire</p>
+                <p>15 de Dezembro Salvador - Ba</p>
+              </div>
+            </div>
+            <button className={styles.botaoCard}>Participar</button>
+          </div>
+        </div>
       </section>
     </>
   );
