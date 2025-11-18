@@ -1,32 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .hero {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    min-height: 80vh;
     padding: 4rem 2rem;
-    gap: 2rem;
+    overflow: hidden;
+}
+
+.heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(300%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
 }
 
 .heroContent h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 4.0rem;
-    padding-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .heroContent p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
-    padding: 0 0 1rem 2.5rem;
-}
-
-.heroImage img {
-    width: 30rem;
-    height: 30rem;
-    border-radius: 10px;
-    object-fit: cover;
-    filter: brightness(40%);
-    padding-right: 3.7rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .buttons {
@@ -44,6 +59,12 @@
     border: 0.1rem solid var(--button);
     font-family: "Montserrat", sans-serif;
     color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botaoVermelho:hover {
+    transform: scale(1.05);
 }
 
 .botaoCinza {
@@ -54,4 +75,82 @@
     border: 0.1rem solid var(--button-cinza);
     font-family: "Montserrat", sans-serif;
     color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botaoCinza:hover {
+    transform: scale(1.05);
+}
+
+.competicoes {
+    padding: 1rem 5rem 0 4.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.inputsPesquisas {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 1rem;
+}
+
+.inputsPesquisas input {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    padding: 1.5rem 0 0 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.divulgacoes {
+    background-color: var(--button-cinza);
+    padding: 1.5rem;
+    border: 1px solid var(--button-cinza);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.topoCard {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.topoCard img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.textoCard h3 {
+    font-size: 1.25rem;
+    margin: 0 0 .5rem 0;
+}
+
+.textoCard p {
+    margin: 0.3rem 0;
+    color: #cfcfcf;
+}
+
+.botaoCard {
+    background-color: var(--button);
+    width: 90%;
+    height: 2.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button);
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+    align-self: center;
+}
+
+.seminarioCursos {
+    padding: 4rem 2rem;
 }
