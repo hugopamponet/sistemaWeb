@@ -156,6 +156,11 @@
     color: var(--text);
     font-family: "Montserrat", sans-serif;
     align-self: center;
+    transition: transform 0.2s;
+}
+
+.botaoCard:hover {
+    transform: scale(1.05);
 }
 
 .eventoDestaque {

@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
 
+import { FiltroPesquisa } from './FiltroPesquisa'
+
 export function Main() {
   return (
     <>
@@ -28,42 +30,7 @@ export function Main() {
       </section>
       <section className={styles.competicoes}>
         <h2>Próximas Competições</h2>
-        <div className={styles.inputsPesquisas}>
-          <select className={styles.estado}>
-            <option value="">Estado</option>
-            <option value="AC">Acre</option>
-            <option value="BA">Bahia</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-          </select>
-          <select className={styles.cidade}>
-            <option value="">Cidade</option>
-            <option value="salvador">Salvador</option>
-            <option value="lauro">Lauro de Freitas</option>
-          </select>
-          <select className={styles.faixa}>
-            <option value="">Faixa</option>
-            <option value="branca">Branca</option>
-            <option value="azul">Azul</option>
-            <option value="roxa">Roxa</option>
-            <option value="marrom">Marrom</option>
-            <option value="preta">Preta</option>
-          </select>
-          <select className={styles.categoria}>
-            <option value="">Categoria</option>
-            <option value="galo">Galo</option>
-            <option value="pluma">Pluma</option>
-            <option value="pena">Pena</option>
-            <option value="leve">Leve</option>
-            <option value="medio">Médio</option>
-            <option value="pesado">Pesado</option>
-          </select>
-          <select className={styles.sexo}>
-            <option value="">Sexo</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-          </select>
-        </div>
+        <FiltroPesquisa />
         <div className={styles.container}>
           <div className={styles.divulgacoes}>
             <div className={styles.topoCard}>
