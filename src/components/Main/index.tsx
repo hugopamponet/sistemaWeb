@@ -15,6 +15,7 @@ export function Main() {
           loop
         />
         <div className={styles.heroContent}>
+          <img src="src/assets/Logo publicano.png" className={styles.logoPublicano} />
           <h2>Encontre todas as Competições de Jiu-Jitsu em um só lugar</h2>
           <p>
             Eventos oficiais, regionais, seminários e cursos tudo organizado

@@ -5,6 +5,7 @@ export function Heading() {
     <>
       <header>
         <div className={styles.menu}>
+          <img src="src/assets/Logo P.png" alt="Logo P" className={styles.logoP} />
           <h1 className={styles.title}>Jiu-Jitsu Eventos</h1>
           <nav className={styles.navegacao}>
             <ul>
