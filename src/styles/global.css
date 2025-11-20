@@ -9,5 +9,5 @@
 body {
     background: var(--primary);
     color: var(--text);
-    max-width: 100rem;
+    max-width: auto;
 }
