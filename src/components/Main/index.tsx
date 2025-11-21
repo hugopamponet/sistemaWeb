@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 
 import { FiltroPesquisa } from './FiltroPesquisa'
+import Button from "./Button";
 
 export function Main() {
   return (
@@ -115,7 +116,7 @@ export function Main() {
                 <p>15 de Dezembro Salvador - Ba</p>
               </div>
             </div>
-            <button className={styles.botaoCard}>Participar</button>
+            <Button />
           </div>
           <div className={styles.divulgacoes}>
             <div className={styles.topoCard}>
