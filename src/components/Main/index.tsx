@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 
 import { FiltroPesquisa } from './FiltroPesquisa'
+import { DadosBasicos } from './CadastroAluno'
 import Button from "./Button";
 
 export function Main() {
@@ -9,7 +10,7 @@ export function Main() {
       <section className={styles.hero}>
         <video
           className={styles.heroVideo}
-          src="src/assets/WhatsApp Video 2025-11-18 at 00.52.03.mp4"
+          src="src/assets/WhatsApp Video 2025-11-21 at 10.27.45.mp4"
           autoPlay
           muted
           playsInline
@@ -148,6 +149,7 @@ export function Main() {
           </div>
         </div>
       </section>
+      <DadosBasicos />
     </>
   );
 }
