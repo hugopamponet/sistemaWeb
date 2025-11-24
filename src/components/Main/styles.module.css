@@ -221,7 +221,6 @@
     padding-left: 2rem;
 }
 
-/* Estilos do Formulário de Cadastro */
 .contentCadastroAluno {
     display: flex;
     flex-direction: column;
@@ -297,7 +296,6 @@
     background-color: #9a1d2a;
 }
 
-/* Estilos do Modal */
 .contentModal {
     position: fixed;
     top: 0;
@@ -327,12 +325,10 @@
     box-sizing: border-box;
 }
 
-/* Container do formulário */
 .formContainer {
     width: 100%;
 }
 
-/* Container da imagem lateral - fixo do lado direito */
 .imagemLateral {
     position: fixed;
     right: 2rem;
@@ -340,8 +336,8 @@
     transform: translateY(-50%);
     width: 250px;
     z-index: 1001;
-    pointer-events: none; /* Permite clicar através da imagem */
-    transition: none; /* Remove qualquer transição que possa causar delay */
+    pointer-events: none;
+    transition: none;
 }
 
 .imagemLateral img {
@@ -353,7 +349,6 @@
     display: block;
 }
 
-/* Imagem no topo do formulário */
 .imagemModal {
     width: 100%;
     max-width: 300px;
@@ -361,11 +356,4 @@
     display: block;
     margin: 0 auto 1.5rem auto;
     border-radius: 8px;
-}
-
-/* Responsivo - esconde imagem lateral em telas pequenas */
-@media (max-width: 1200px) {
-    .imagemLateral {
-        display: none;
-    }
 }
