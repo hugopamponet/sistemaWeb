@@ -220,3 +220,152 @@
 .cardEventos3 h2 {
     padding-left: 2rem;
 }
+
+/* Estilos do Formulário de Cadastro */
+.contentCadastroAluno {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contentCadastroAluno > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.camposLinha {
+    flex-direction: row !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.camposLinha > div {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contentCadastroAluno h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contentCadastroAluno label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.contentCadastroAluno input,
+.contentCadastroAluno select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contentCadastroAluno input:focus,
+.contentCadastroAluno select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.contentCadastroAluno button {
+    padding: 0.75rem 2rem;
+    background-color: #C02434;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.contentCadastroAluno button:hover {
+    background-color: #9a1d2a;
+}
+
+/* Estilos do Modal */
+.contentModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalStylo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+    max-height: 90vh;
+    overflow-y: auto;
+    max-width: 800px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* Container do formulário */
+.formContainer {
+    width: 100%;
+}
+
+/* Container da imagem lateral - fixo do lado direito */
+.imagemLateral {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    z-index: 1001;
+    pointer-events: none; /* Permite clicar através da imagem */
+    transition: none; /* Remove qualquer transição que possa causar delay */
+}
+
+.imagemLateral img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    display: block;
+}
+
+/* Imagem no topo do formulário */
+.imagemModal {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+}
+
+/* Responsivo - esconde imagem lateral em telas pequenas */
+@media (max-width: 1200px) {
+    .imagemLateral {
+        display: none;
+    }
+}

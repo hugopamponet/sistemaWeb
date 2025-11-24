@@ -1,18 +1,16 @@
-import { useState } from 'react';
-import { createPortal } from 'react-dom';
-import ModalContent from './ModalContent.js';
+import styles from "./styles.module.css";
+
+import { useState } from "react";
+import ModalContent from "./ModalContent";
 
 export default function PortalExample() {
-  const [showModal, setShowModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <button onClick={() => setShowModal(true)}>
-        Show modal using a portal
+      <button className={styles.botaoCard} onClick={() => setOpenModal(true)}>
+        Increva-se
       </button>
-      {showModal && createPortal(
-        <ModalContent onClose={() => setShowModal(false)} />,
-        document.body
-      )}
+      <ModalContent isOpen={openModal} />
     </>
   );
 }

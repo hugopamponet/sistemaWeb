@@ -1,58 +1,83 @@
+import styles from './styles.module.css'
 import { DefaultEndereco } from './DefaultEndereco';
 import { DefaultSenha } from './DefaultSenha'
 
-export function DadosBasicos() {
+export function CadastroAluno() {
   return (
     <>
-      <div>
+      <div className={styles.contentCadastroAluno}>
+        <div className={styles.imagemModal}>
+          <img src="src/assets/Homens Lutando.png" alt="Homens Lutando" />
+        </div>
+
         <div>
           <h1>Dados Pessoais</h1>
         </div>
-        <div>
-          <label htmlFor="nome">Nome</label>
-          <input type="text" name="nome" id="nome" />
+        
+        {/* Nome e Sobrenome lado a lado */}
+        <div className={styles.camposLinha}>
+          <div>
+            <label htmlFor="nome">Nome</label>
+            <input type="text" name="nome" id="nome" />
+          </div>
+          <div>
+            <label htmlFor="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" />
+          </div>
         </div>
-        <div>
-          <label htmlFor="sobrenome">Sobrenome</label>
-          <input type="text" name="sobrenome" id="sobrenome" />
+        
+        {/* CPF e Data de Nascimento lado a lado */}
+        <div className={styles.camposLinha}>
+          <div>
+            <label htmlFor="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" />
+          </div>
+          <div>
+            <label htmlFor="dtaNascimento">Data de nascimento</label>
+            <input type="date" name="dtaNascimento" id="dtaNascimento" />
+          </div>
         </div>
-        <div>
-          <label htmlFor="cpf">CPF</label>
-          <input type="text" name="cpf" id="cpf" />
+        
+        {/* Telefone e Sexo lado a lado */}
+        <div className={styles.camposLinha}>
+          <div>
+            <label htmlFor="telefone">Telefone</label>
+            <input type="tel" name="telefone" id="telefone" />
+          </div>
+          <div>
+            <label htmlFor="sexo">Sexo</label>
+            <select id="sexo" name="sexo">
+              <option value="">Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label htmlFor="dtaNascimento">Data de nascimento</label>
-          <input type="date" name="dtaNascimento" id="dtaNascimento" />
-        </div>
-        <div>
-          <label htmlFor="telefone">Telefone</label>
-          <input type="tel" name="telefone" id="telefone" />
-        </div>
-        <div>
-          <select>
-            <option value="">Sexo</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-          </select>
-        </div>
+        
         <div>
           <DefaultEndereco />
         </div>
+        
         <div>
           <h1>Equipe</h1>
         </div>
-        <div>
+        
+        {/* Escola e Professor lado a lado */}
+        <div className={styles.camposLinha}>
           <div>
-            <select>
-              <option value="">Escola</option>
+            <label htmlFor="escola">Escola</label>
+            <select id="escola" name="escola">
+              <option value="">Selecione</option>
             </select>
           </div>
           <div>
-            <select>
-              <option value="">Professor</option>
+            <label htmlFor="professor">Professor</label>
+            <select id="professor" name="professor">
+              <option value="">Selecione</option>
             </select>
           </div>
         </div>
+        
         <DefaultSenha />
       </div>
     </>

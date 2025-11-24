@@ -1,7 +1,6 @@
 import styles from "./styles.module.css";
 
 import { FiltroPesquisa } from './FiltroPesquisa'
-import { DadosBasicos } from './CadastroAluno'
 import Button from "./Button";
 
 export function Main() {
@@ -47,7 +46,7 @@ export function Main() {
                 <p>15 de novembro de 2025</p>
               </div>
             </div>
-            <button className={styles.botaoCard}>Inscreva-se</button>
+            <Button />
           </div>
           <div className={styles.divulgacoes}>
             <div className={styles.topoCard}>
@@ -61,7 +60,7 @@ export function Main() {
                 <p>15 de novembro de 2025</p>
               </div>
             </div>
-            <button className={styles.botaoCard}>Inscreva-se</button>
+            <Button />
           </div>
           <div className={styles.divulgacoes}>
             <div className={styles.topoCard}>
@@ -75,7 +74,7 @@ export function Main() {
                 <p>15 de novembro de 2025</p>
               </div>
             </div>
-            <button className={styles.botaoCard}>Inscreva-se</button>
+            <Button />
           </div>
         </div>
       </section>
@@ -117,7 +116,7 @@ export function Main() {
                 <p>15 de Dezembro Salvador - Ba</p>
               </div>
             </div>
-            <Button />
+            <button className={styles.botaoCard}>Participar</button>
           </div>
           <div className={styles.divulgacoes}>
             <div className={styles.topoCard}>
@@ -149,7 +148,6 @@ export function Main() {
           </div>
         </div>
       </section>
-      <DadosBasicos />
     </>
   );
 }
