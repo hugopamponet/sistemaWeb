@@ -1,14 +1,18 @@
 import styles from "./styles.module.css";
 
 import { useState } from "react";
-import ModalContent from "./ModalContent";
+import ModalContent from "../Main/ModalContent";
 
-export default function PortalExample() {
+type ButtonProps = {
+  children: string
+}
+
+export function Button( { children }: ButtonProps) {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <button className={styles.botaoCard} onClick={() => setOpenModal(true)}>
-        Increva-se
+        {children}
       </button>
       <ModalContent isOpen={openModal} />
     </>

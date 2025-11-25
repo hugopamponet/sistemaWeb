@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+
+import { useState, useEffect } from "react";
 import { FiltroPesquisa } from "../Filter";
-import Button from "./Button";
+import { Button } from "../Button/Button"
 import { competicoesMock } from "../mocks/competicoesMock";
 import { seminarioseMock } from "../mocks/seminarioseMock";
+
 
 export function Main() {
   const [competicoes, setCompeticoes] = useState([]);
@@ -104,7 +106,7 @@ export function Main() {
                     <p>{competicao.data}</p>
                   </div>
                 </div>
-                <Button />
+                <Button children="Inscreva-se"/>
               </div>
             ))}
           </div>
@@ -154,7 +156,7 @@ export function Main() {
                     <p>{seminario.data}</p>
                   </div>
                 </div>
-                <button className={styles.botaoCard}>Participar</button>
+                <Button children="Participe"/>
               </div>
             ))}
           </div>
