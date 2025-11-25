@@ -1,0 +1,61 @@
+.contentModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalStylo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+    max-height: 90vh;
+    overflow-y: auto;
+    max-width: 800px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.formContainer {
+    width: 100%;
+}
+
+.imagemLateral {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    z-index: 1001;
+    pointer-events: none;
+    transition: none;
+}
+
+.imagemLateral img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    display: block;
+}
+
+.imagemModal {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+}

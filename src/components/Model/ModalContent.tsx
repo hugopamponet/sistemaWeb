@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import { CadastroAluno } from './CadastroAluno'
+import { CadastroAluno } from '../Main/CadastroAluno'
 
 interface ModalContentProps {
   isOpen: boolean;
