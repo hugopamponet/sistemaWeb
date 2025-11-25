@@ -1,31 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import { FiltroPesquisa } from '../Filter';
+import { FiltroPesquisa } from "../Filter";
 import Button from "./Button";
+import { competicoesMock } from "../mocks/competicoesMock";
+import { seminarioseMock } from "../mocks/seminarioseMock";
 
 export function Main() {
   const [competicoes, setCompeticoes] = useState([]);
   const [seminarios, setSeminarios] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Simular busca do banco de dados
+  // Simular busca do banco de dados com delay
   useEffect(() => {
-    // Aqui você vai substituir pela chamada real da sua API
     fetchCompeticoes();
     fetchSeminarios();
   }, []);
 
   const fetchCompeticoes = async () => {
     try {
-      // Substitua pela URL da sua API
-      // const response = await fetch('https://sua-api.com/competicoes');
-      // const data = await response.json();
-      // setCompeticoes(data);
-      
-      // Por enquanto, array vazio para testar
-      setCompeticoes([]);
+      setLoading(true);
+
+      // Simula um delay de API (1 segundo)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // TESTE 1: Com dados (descomente esta linha)
+      setCompeticoes(competicoesMock);
+
+      // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
+      // setCompeticoes([]);
     } catch (error) {
-      console.error('Erro ao buscar competições:', error);
+      console.error("Erro ao buscar competições:", error);
     } finally {
       setLoading(false);
     }
@@ -33,15 +37,16 @@ export function Main() {
 
   const fetchSeminarios = async () => {
     try {
-      // Substitua pela URL da sua API
-      // const response = await fetch('https://sua-api.com/seminarios');
-      // const data = await response.json();
-      // setSeminarios(data);
-      
-      // Por enquanto, array vazio para testar
-      setSeminarios([]);
+      // Simula um delay de API
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // TESTE 1: Com dados (descomente esta linha)
+      setSeminarios(seminarioseMock);
+
+      // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
+      // setSeminarios([]);
     } catch (error) {
-      console.error('Erro ao buscar seminários:', error);
+      console.error("Erro ao buscar seminários:", error);
     }
   };
 
@@ -57,7 +62,10 @@ export function Main() {
           loop
         />
         <div className={styles.heroContent}>
-          <img src="src/assets/Logo publicano.png" className={styles.logoPublicano} />
+          <img
+            src="src/assets/Logo publicano.png"
+            className={styles.logoPublicano}
+          />
           <h2>Encontre todas as Competições de Jiu-Jitsu em um só lugar</h2>
           <p>
             Eventos oficiais, regionais, seminários e cursos tudo organizado
@@ -75,7 +83,7 @@ export function Main() {
       <section className={styles.competicoes}>
         <h2>Próximas Competições</h2>
         <FiltroPesquisa />
-        
+
         {loading ? (
           <div className={styles.mensagemVazia}>
             <p>Carregando eventos...</p>
@@ -86,13 +94,10 @@ export function Main() {
           </div>
         ) : (
           <div className={styles.container}>
-            {competicoes.map((competicao) => (
+            {competicoes.map((competicao: any) => (
               <div key={competicao.id} className={styles.divulgacoes}>
                 <div className={styles.topoCard}>
-                  <img
-                    src={competicao.imagem}
-                    alt="Lutadores de Jiu-Jitsu"
-                  />
+                  <img src={competicao.imagem} alt="Lutadores de Jiu-Jitsu" />
                   <div className={styles.textoCard}>
                     <h3>{competicao.titulo}</h3>
                     <p>{competicao.descricao}</p>
@@ -132,20 +137,17 @@ export function Main() {
 
       <section className={styles.competicoes}>
         <h2>Seminário e Cursos</h2>
-        
+
         {seminarios.length === 0 ? (
           <div className={styles.mensagemVazia}>
             <p>Ainda não temos seminários e cursos programados</p>
           </div>
         ) : (
           <div className={styles.container}>
-            {seminarios.map((seminario) => (
+            {seminarios.map((seminario: any) => (
               <div key={seminario.id} className={styles.divulgacoes}>
                 <div className={styles.topoCard}>
-                  <img
-                    src={seminario.imagem}
-                    alt="Professor de Jiu-Jitsu"
-                  />
+                  <img src={seminario.imagem} alt="Professor de Jiu-Jitsu" />
                   <div className={styles.textoCard}>
                     <h3>{seminario.titulo}</h3>
                     <p>{seminario.mestre}</p>
