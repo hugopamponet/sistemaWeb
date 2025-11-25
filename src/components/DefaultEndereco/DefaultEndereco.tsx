@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import styles from './styles.module.css';
+
+import { useState } from 'react';
 
 export function DefaultEndereco() {
   const [loading, setLoading] = useState(false);
@@ -13,12 +14,10 @@ export function DefaultEndereco() {
     numero: ''
   });
 
-  // Função para buscar CEP
   const buscarCEP = async (cep: string) => {
-    // Remove caracteres não numéricos
+
     const cepLimpo = cep.replace(/\D/g, '');
 
-    // Verifica se o CEP tem 8 dígitos
     if (cepLimpo.length !== 8) {
       return;
     }
@@ -29,14 +28,12 @@ export function DefaultEndereco() {
       const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
       const data = await response.json();
 
-      // Verifica se o CEP é válido
       if (data.erro) {
         alert('CEP não encontrado!');
         setLoading(false);
         return;
       }
 
-      // Preenche os campos com os dados do CEP
       setEndereco({
         ...endereco,
         cep: cep,
@@ -44,7 +41,6 @@ export function DefaultEndereco() {
         bairro: data.bairro || '',
         cidade: data.localidade || '',
         estado: data.uf || ''
-        // complemento e numero não são preenchidos
       });
 
     } catch (error) {
@@ -55,7 +51,6 @@ export function DefaultEndereco() {
     }
   };
 
-  // Função para formatar o CEP enquanto digita
   const formatarCEP = (valor: string) => {
     const cepLimpo = valor.replace(/\D/g, '');
     
@@ -66,12 +61,10 @@ export function DefaultEndereco() {
     return `${cepLimpo.slice(0, 5)}-${cepLimpo.slice(5, 8)}`;
   };
 
-  // Handler para mudança no CEP
   const handleCEPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valorFormatado = formatarCEP(e.target.value);
     setEndereco({ ...endereco, cep: valorFormatado });
 
-    // Busca automaticamente quando completar 9 caracteres (00000-000)
     if (valorFormatado.length === 9) {
       buscarCEP(valorFormatado);
     }
@@ -84,7 +77,7 @@ export function DefaultEndereco() {
           <h1>Endereço</h1>
         </div>
         
-        {/* CEP sozinho */}
+        { }
         <div>
           <label htmlFor="cep">CEP</label>
           <input 
@@ -99,7 +92,7 @@ export function DefaultEndereco() {
           {loading && <small style={{ color: '#C02434' }}>Buscando CEP...</small>}
         </div>
         
-        {/* Endereço e Bairro lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="endereco">Endereço</label>
@@ -123,7 +116,7 @@ export function DefaultEndereco() {
           </div>
         </div>
         
-        {/* Cidade e Estado lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="cidade">Cidade</label>
@@ -148,7 +141,7 @@ export function DefaultEndereco() {
           </div>
         </div>
         
-        {/* Número e Complemento lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="numero">Número</label>

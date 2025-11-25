@@ -1,0 +1,27 @@
+.contentCadastroAluno {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contentCadastroAluno > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.camposLinha {
+    flex-direction: row !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.camposLinha > div {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
