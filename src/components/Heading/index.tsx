@@ -1,5 +1,8 @@
 import styles from "./styles.module.css";
 
+import { Button } from "../Button";
+import { Link } from "react-router-dom";
+
 export function Heading() {
   return (
     <>
@@ -9,11 +12,12 @@ export function Heading() {
           <h1 className={styles.title}>Jiu-Jitsu Eventos</h1>
           <nav className={styles.navegacao}>
             <ul>
-              <li>Inicio</li>
-              <li>Competições</li>
-              <li>Seminários</li>
-              <li>Cursos</li>
-              <button className={styles.criarConta}>Criar conta</button>
+              <li><Link to="/"> Inicio</Link></li>
+              <li><Link to="/competicoes">Competições</Link></li>
+              <li><Link to="/seminario">Seminários</Link></li>
+              <li><Link to="/cursos">Cursos</Link></li>
+              <Link to="/criarConta"><Button children="Criar conta" /></Link>
+              <Link to="/login"><Button children="Login" /></Link>
             </ul>
           </nav>
         </div>

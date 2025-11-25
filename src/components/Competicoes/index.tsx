@@ -1,14 +1,18 @@
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
-import { Heading } from '../Heading'
+import { Filter } from "../Filter";
 
 export function Competicoes() {
-    return(
-        <>
-        <Heading />
-        <div className={styles.filter}>
+  return (
+    <>
+      <main>
+        <div className={styles.content}>
+          <div className={styles.filter}>
             <h1>Pesquisa</h1>
+          </div>
+          <Filter />
         </div>
-        </>
-    );
+      </main>
+    </>
+  );
 }
