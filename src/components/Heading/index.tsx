@@ -14,8 +14,8 @@ export function Heading() {
             <ul>
               <li><Link to="/"> Inicio</Link></li>
               <li><Link to="/competicoes">Competições</Link></li>
-              <li><Link to="/seminario">Seminários</Link></li>
-              <li><Link to="/cursos">Cursos</Link></li>
+              <li><Link to="/seminar">Seminários</Link></li>
+              <li><Link to="/courses">Cursos</Link></li>
               <Link to="/criarConta"><Button children="Criar conta" /></Link>
               <Link to="/login"><Button children="Login" /></Link>
             </ul>
