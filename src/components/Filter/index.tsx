@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 
-export function FiltroPesquisa() {
+export function Filter() {
   const [estados, setEstados] = useState([]);
   const [cidades, setCidades] = useState([]);
   const [estadoSelecionado, setEstadoSelecionado] = useState('');

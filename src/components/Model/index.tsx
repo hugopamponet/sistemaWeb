@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
-import { StudentRegistration } from '../StudentRegistration/StudentRegistration'
+
+import { StudentRegistration } from '../StudentRegistration';
 
 interface ModalContentProps {
   isOpen: boolean;

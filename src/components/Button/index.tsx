@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 
 import { useState } from "react";
-import ModalContent from "../Model/ModalContent";
+import ModalContent from "../Model";
 
 type ButtonProps = {
   children: string

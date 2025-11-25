@@ -1,5 +1,6 @@
-import { Button } from '../Button/Button';
 import styles from './styles.module.css'
+
+import { Button } from '../Button';
 
 export function DefaultSenha() {
   return (

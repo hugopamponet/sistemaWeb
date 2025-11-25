@@ -1,7 +1,8 @@
 import styles from './styles.module.css'
 
-import { DefaultEndereco } from '../DefaultEndereco/DefaultEndereco';
-import { DefaultSenha } from '../DefaultSenha/DefaultSenha'
+import { DefaultEndereco } from '../DefaultEndereco';
+import { DefaultSenha } from '../DefaultSenha'
+import { Teams } from '../Teams';
 
 export function StudentRegistration() {
   return (
@@ -15,7 +16,7 @@ export function StudentRegistration() {
           <h1>Dados Pessoais</h1>
         </div>
         
-        {/* Nome e Sobrenome lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="nome">Nome</label>
@@ -27,7 +28,7 @@ export function StudentRegistration() {
           </div>
         </div>
         
-        {/* CPF e Data de Nascimento lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="cpf">CPF</label>
@@ -39,7 +40,7 @@ export function StudentRegistration() {
           </div>
         </div>
         
-        {/* Telefone e Sexo lado a lado */}
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="telefone">Telefone</label>
@@ -58,28 +59,15 @@ export function StudentRegistration() {
         <div>
           <DefaultEndereco />
         </div>
+
+        <div>
+          <Teams />
+        </div>
         
         <div>
-          <h1>Equipe</h1>
-        </div>
-        
-        {/* Escola e Professor lado a lado */}
-        <div className={styles.camposLinha}>
-          <div>
-            <label htmlFor="escola">Escola</label>
-            <select id="escola" name="escola">
-              <option value="">Selecione</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="professor">Professor</label>
-            <select id="professor" name="professor">
-              <option value="">Selecione</option>
-            </select>
-          </div>
-        </div>
-        
         <DefaultSenha />
+        </div>
+
       </div>
     </>
   );

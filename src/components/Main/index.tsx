@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 
 import { useState, useEffect } from "react";
-import { FiltroPesquisa } from "../Filter";
-import { Button } from "../Button/Button"
+import { Filter } from "../Filter";
+import { Button } from "../Button"
 import { competicoesMock } from "../mocks/competicoesMock";
 import { seminarioseMock } from "../mocks/seminarioseMock";
 
@@ -84,7 +84,7 @@ export function Main() {
 
       <section className={styles.competicoes}>
         <h2>Próximas Competições</h2>
-        <FiltroPesquisa />
+        <Filter />
 
         {loading ? (
           <div className={styles.mensagemVazia}>
