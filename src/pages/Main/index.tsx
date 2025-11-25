@@ -1,10 +1,10 @@
 import styles from "./styles.module.css";
 
 import { useState, useEffect } from "react";
-import { Filter } from "../Filter";
-import { Button } from "../Button"
-import { competicoesMock } from "../mocks/competicoesMock";
-import { seminarioseMock } from "../mocks/seminarioseMock";
+import { Filter } from "../../components/Filter";
+import { Button } from "../../components/Button"
+import { competicoesMock } from "../../components/mocks/competicoesMock";
+import { seminarioseMock } from "../../components/mocks/seminarioseMock";
 
 
 export function Main() {
