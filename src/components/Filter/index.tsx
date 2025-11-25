@@ -51,25 +51,6 @@ export function FiltroPesquisa() {
         ))}
       </select>
 
-      <select className={styles.faixa}>
-        <option value="">Faixa</option>
-        <option value="branca">Branca</option>
-        <option value="azul">Azul</option>
-        <option value="roxa">Roxa</option>
-        <option value="marrom">Marrom</option>
-        <option value="preta">Preta</option>
-      </select>
-
-      <select className={styles.categoria}>
-        <option value="">Categoria</option>
-        <option value="galo">Galo</option>
-        <option value="pluma">Pluma</option>
-        <option value="pena">Pena</option>
-        <option value="leve">Leve</option>
-        <option value="medio">Médio</option>
-        <option value="pesado">Pesado</option>
-      </select>
-
       <select className={styles.sexo}>
         <option value="">Sexo</option>
         <option value="masculino">Masculino</option>

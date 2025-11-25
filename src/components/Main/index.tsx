@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-import { FiltroPesquisa } from './FiltroPesquisa'
+import { FiltroPesquisa } from '../Filter'
 import Button from "./Button";
 
 export function Main() {
