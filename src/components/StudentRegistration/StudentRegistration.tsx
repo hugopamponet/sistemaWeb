@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 import { DefaultEndereco } from '../DefaultEndereco/DefaultEndereco';
 import { DefaultSenha } from '../DefaultSenha/DefaultSenha'
 
-export function CadastroAluno() {
+export function StudentRegistration() {
   return (
     <>
       <div className={styles.contentCadastroAluno}>

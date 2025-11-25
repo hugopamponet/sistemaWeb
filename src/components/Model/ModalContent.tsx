@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import { CadastroAluno } from '../Main/CadastroAluno'
+import { StudentRegistration } from '../StudentRegistration/StudentRegistration'
 
 interface ModalContentProps {
   isOpen: boolean;
@@ -14,7 +14,7 @@ export default function ModalContent({ isOpen }: ModalContentProps) {
     <div className={styles.contentModal}>
       <div className={styles.modalStylo}>
         <div className={styles.formContainer}>
-          <CadastroAluno />
+          <StudentRegistration />
         </div>
         <div className={styles.imagemLateral}>
           <img src="src/assets/desenho.png" alt="Tabela de Peso - Jiu Jitsu" />

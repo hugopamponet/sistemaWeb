@@ -184,52 +184,6 @@
     padding-left: 2rem;
 }
 
-.contentCadastroAluno h1 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.contentCadastroAluno label {
-    font-weight: 500;
-    color: #555;
-    font-size: 0.9rem;
-}
-
-.contentCadastroAluno input,
-.contentCadastroAluno select {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.contentCadastroAluno input:focus,
-.contentCadastroAluno select:focus {
-    outline: none;
-    border-color: #4a90e2;
-}
-
-.contentCadastroAluno button {
-    padding: 0.75rem 2rem;
-    background-color: #C02434;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-}
-
-.contentCadastroAluno button:hover {
-    background-color: #9a1d2a;
-}
 
 .mensagemVazia {
   display: flex;
