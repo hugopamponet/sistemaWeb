@@ -26,7 +26,7 @@ export function Main() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // TESTE 1: Com dados (descomente esta linha)
-      setCompeticoes(competicoesMock);
+      //setCompeticoes(competicoesMock);
 
       // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
       // setCompeticoes([]);
@@ -43,7 +43,7 @@ export function Main() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // TESTE 1: Com dados (descomente esta linha)
-      setSeminarios(seminarioseMock);
+      //setSeminarios(seminarioseMock);
 
       // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
       // setSeminarios([]);

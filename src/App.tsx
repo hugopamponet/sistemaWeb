@@ -5,8 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Heading } from "./components/Heading";
 import { Main } from "./pages/Main";
 import { Footer } from "./components/Footer";
-import { Competicoes } from "./components/Competicoes";
-import { Seminar } from "./components/Seminar";
+import { Competicoes } from "./pages/Competicoes/index";
+import { Seminar } from "./pages/Seminar/index";
 import { Courses } from "./pages/Courses";
 
 export function App() {
