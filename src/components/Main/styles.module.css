@@ -336,3 +336,17 @@
     margin: 0 auto 1.5rem auto;
     border-radius: 8px;
 }
+
+.mensagemVazia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mensagemVazia p {
+  font-size: 1.5rem;
+  color: #888;
+  text-align: center;
+}
