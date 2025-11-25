@@ -5,7 +5,8 @@ import ModalContent from "../Model/ModalContent";
 
 type ButtonProps = {
   children: string
-}
+  type?: 'submit'
+} 
 
 export function Button( { children }: ButtonProps) {
   const [openModal, setOpenModal] = useState(false);

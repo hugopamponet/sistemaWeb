@@ -1,10 +1,14 @@
+import { Button } from '../Button/Button';
 import styles from './styles.module.css'
 
 export function DefaultSenha() {
   return (
     <>
       <div className={styles.contentCadastroAluno}>
-        {/* Senha e Confirmar lado a lado */}
+        <div>
+          <h1>Dados de acesso</h1>
+        </div>
+        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="senha">Senha</label>
@@ -16,13 +20,13 @@ export function DefaultSenha() {
           </div>
         </div>
         
-        {/* Dica da senha ocupa linha inteira */}
+        { }
         <div>
           <label htmlFor="lembrar">Uma dica para lembrar de sua senha</label>
           <input type="text" name="lembrar" id="lembrar" />
         </div>
 
-        <button type="submit">Inscrever</button>
+        <Button children="Participe" type='submit' />
       </div>
     </>
   );

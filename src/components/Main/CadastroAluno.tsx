@@ -1,6 +1,7 @@
 import styles from './styles.module.css'
+
 import { DefaultEndereco } from '../DefaultEndereco/DefaultEndereco';
-import { DefaultSenha } from './DefaultSenha'
+import { DefaultSenha } from '../DefaultSenha/DefaultSenha'
 
 export function CadastroAluno() {
   return (
