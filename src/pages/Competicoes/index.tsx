@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import { Filter } from "../../components/Filter";
 import { Advertising } from "../../components/Advertising";
+import { CompetitionCard } from "../../components/CompetitionCard/CompetitionCard";
 
 export function Competicoes() {
   return (
@@ -11,6 +12,7 @@ export function Competicoes() {
           <div className={styles.filter}>
             <h1>Pesquisa</h1>
             <Filter />
+            <CompetitionCard />
           </div>
         </div>
       </main>
