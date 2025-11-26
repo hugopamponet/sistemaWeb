@@ -122,7 +122,7 @@ export function Home() {
       <section className={styles.hero}>
         <video
           className={styles.heroVideo}
-          src="src/assets/videos/videoHome.mp4"
+          src="public/videos/videoHome.mp4"
           autoPlay
           muted
           playsInline
@@ -130,7 +130,7 @@ export function Home() {
         />
         <div className={styles.heroContent}>
           <img
-            src="src/assets/images/logoHome02.png"
+            src="public/images/logoHome02.png"
             className={styles.logoPublicano}
             alt="Logo Publicano"
           />
