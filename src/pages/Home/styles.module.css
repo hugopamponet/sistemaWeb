@@ -96,3 +96,31 @@
 .cardEventos3 h2 {
     padding-left: 2rem;
 }
+
+@media (min-width: 360px) and (max-width: 414px) {
+    .competicoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .competicoes h2 {
+        text-align: center;
+    }
+
+    .eventoDestaque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .todosEventos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

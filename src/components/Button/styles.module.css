@@ -8,6 +8,7 @@
     color: var(--text);
     cursor: pointer;
     transition: transform 0.2s;
+    margin-bottom: 1rem;
 }
 
 .botaoVermelho:hover {
@@ -40,6 +41,7 @@
     color: var(--text);
     cursor: pointer;
     transition: transform 0.2s;
+    margin-bottom: 1rem;
 }
 
 .botaoCinza:hover {
