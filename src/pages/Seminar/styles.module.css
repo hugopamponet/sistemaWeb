@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+.heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(300%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+}
+
+.logoPublicano {
+    width: 30rem;
+}
+
+.heroContent h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.0rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.heroContent p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.botaoVermelho {
+    background-color: var(--button);
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botaoVermelho:hover {
+    transform: scale(1.05);
+}
+
+.botaoCinza {
+    background-color: var(--button-cinza);
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button-cinza);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botaoCinza:hover {
+    transform: scale(1.05);
+}
+
+.competicoes {
+    padding: 1rem 5rem 0 4.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    display: grid;
+    padding: 1.5rem 0 0 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.divulgacoes {
+    background-color: var(--button-cinza);
+    padding: 1.5rem;
+    border: 1px solid var(--button-cinza);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.topoCard {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.topoCard img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.textoCard h3 {
+    font-size: 1.25rem;
+    margin: 0 0 .5rem 0;
+}
+
+.textoCard p {
+    margin: 0.3rem 0;
+    color: #cfcfcf;
+}
+
+.eventoDestaque {
+    padding: 2rem 0 2rem 4.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.todosEventos {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.eventoCard {
+    padding-top: 1rem;
+}
+
+.cardEventos1 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento1);
+    border: 1px solid var(--card-evento1);
+    border-radius: 10px;
+}
+
+.cardEventos1 h2 {
+    padding-left: 2rem;
+}
+
+.cardEventos2 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento2);
+    border: 1px solid var(--card-evento2);
+    border-radius: 10px;
+}
+
+.cardEventos2 h2 {
+    padding-left: 2rem;
+}
+
+.cardEventos3 {
+    width: 20rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--card-evento3);
+    border: 1px solid var(--card-evento3);
+    border-radius: 10px;
+}
+
+.cardEventos3 h2 {
+    padding-left: 2rem;
+}
+
+
+.mensagemVazia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mensagemVazia p {
+  font-size: 1.5rem;
+  color: #888;
+  text-align: center;
+}

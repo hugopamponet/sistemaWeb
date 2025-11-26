@@ -1,8 +1,7 @@
 import styles from "./styles.module.css";
+import { Filter } from "../../components/Filter";
 
-import { Filter } from "../Filter";
-
-export function Courses() {
+export function Competicoes() {
   return (
     <>
       <main>

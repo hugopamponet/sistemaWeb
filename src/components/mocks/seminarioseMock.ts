@@ -1,10 +1,10 @@
-export const seminarioseMock = [
+const seminarioseMock = [
   {
     id: 1,
     titulo: "Seminário Defesa Pessoal",
     mestre: "Mestre: Jonathas Meire",
     data: "15 de Dezembro Salvador - BA",
-    imagem: "src/assets/Seminario.png"
+    imagem: "src/assets/imagens/Seminario.png"
   },
   {
     id: 2,
@@ -14,3 +14,5 @@ export const seminarioseMock = [
     imagem: "src/assets/Seminario.png"
   }
 ];
+
+export default seminarioseMock

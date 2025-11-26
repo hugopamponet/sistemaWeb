@@ -1,15 +1,15 @@
 import styles from "./styles.module.css";
 
 import { useState, useEffect } from "react";
-import { Filter } from "../Filter";
-import { Button } from "../Button"
-import { competicoesMock } from "../mocks/competicoesMock";
-import { seminarioseMock } from "../mocks/seminarioseMock";
+import { Filter } from "../../components/Filter";
+import { Button } from "../../components/Button"
+import seminarioseMock  from "../../components/mocks/seminarioseMock";
+import competicoesMock from "../../components/mocks/competicoesMock";
 
 
-export function Main() {
-  const [competicoes, setCompeticoes] = useState([]);
-  const [seminarios, setSeminarios] = useState([]);
+export function Home() {
+  const [competicoes, setCompeticoes] = useState(competicoesMock);
+  const [seminarios, setSeminarios] = useState([seminarioseMock]);
   const [loading, setLoading] = useState(true);
 
   // Simular busca do banco de dados com delay
@@ -29,7 +29,7 @@ export function Main() {
       setCompeticoes(competicoesMock);
 
       // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
-      // setCompeticoes([]);
+      setCompeticoes([]);
     } catch (error) {
       console.error("Erro ao buscar competições:", error);
     } finally {
@@ -46,7 +46,7 @@ export function Main() {
       setSeminarios(seminarioseMock);
 
       // TESTE 2: Sem dados (descomente esta linha e comente a de cima)
-      // setSeminarios([]);
+      setSeminarios([]);
     } catch (error) {
       console.error("Erro ao buscar seminários:", error);
     }
@@ -57,7 +57,7 @@ export function Main() {
       <section className={styles.hero}>
         <video
           className={styles.heroVideo}
-          src="src/assets/WhatsApp Video 2025-11-21 at 10.27.45.mp4"
+          src="src/assets/videos/videoHome.mp4"
           autoPlay
           muted
           playsInline
@@ -65,7 +65,7 @@ export function Main() {
         />
         <div className={styles.heroContent}>
           <img
-            src="src/assets/Logo publicano.png"
+            src="src/assets/images/logoHome02.png"
             className={styles.logoPublicano}
           />
           <h2>Encontre todas as Competições de Jiu-Jitsu em um só lugar</h2>
