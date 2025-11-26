@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent } from 'react'
+import { useState } from 'react'
+import type { ChangeEvent, FormEvent } from 'react'
 import { supabase } from '../../lib/supabaseClient'
 
 interface FormData {
@@ -134,8 +135,8 @@ export function PromoteEvent() {
         throw new Error(`Erro ao cadastrar: ${error.message}`)
       }
 
-      console.log('Competicoes cadastrada:', data)
-      alert('Competicoes cadastrada com sucesso!')
+      console.log('Competição cadastrada:', data)
+      alert('Competição cadastrada com sucesso!')
       
       // Limpar formulário
       setFormData({
@@ -155,7 +156,7 @@ export function PromoteEvent() {
 
     } catch (error: any) {
       console.error('Erro completo:', error)
-      alert(error.message || 'Erro ao cadastrar Competicoes')
+      alert(error.message || 'Erro ao cadastrar competição')
     } finally {
       setUploading(false)
     }
@@ -163,7 +164,7 @@ export function PromoteEvent() {
 
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <h2>Cadastrar Nova Competicoes</h2>
+      <h2>Cadastrar Nova Competição</h2>
       
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '15px' }}>
@@ -236,13 +237,13 @@ export function PromoteEvent() {
             onChange={handleChange}
             required
             rows={4}
-            placeholder="Descreva os detalhes da Competicoes..."
+            placeholder="Descreva os detalhes da competição..."
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           />
         </div>
 
         <div style={{ marginBottom: '15px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>Imagem da Competicoes</label>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Imagem da Competição</label>
           <input
             type="file"
             accept="image/*"
@@ -282,7 +283,7 @@ export function PromoteEvent() {
             fontWeight: 'bold'
           }}
         >
-          {uploading ? 'Cadastrando...' : 'Cadastrar Competicoes'}
+          {uploading ? 'Cadastrando...' : 'Cadastrar Competição'}
         </button>
       </form>
     </div>
