@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Heading } from "./components/Heading";
 import { Main } from "./pages/Main";
 import { Footer } from "./components/Footer";
-import { Competicoes } from "./pages/Competicoes/index";
+import { Competicoes } from "./pages/Competicoes";
 import { Seminar } from "./pages/Seminar/index";
 import { Courses } from "./pages/Courses";
 
