@@ -1,12 +1,10 @@
 import styles from "./styles.module.css";
-import stylesButton from "../../components/Button/styles.module.css";
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Filter } from "../../components/Filter";
-import { ButtonModel } from "../../components/ButtonModel"
-import { Button } from "../../components/Button";
+import { ButtonModel } from "../../components/ButtonModel";
 import { supabase } from "../../lib/supabaseClient";
+import { Advertising } from "../../components/Advertising";
 
 // Interface para tipar as competições
 interface Competicao {
@@ -47,26 +45,25 @@ export function Home() {
       setError(null);
 
       const { data, error } = await supabase
-        .from('Competicoes')
-        .select('*')
-        .order('data', { ascending: true });
+        .from("Competicoes")
+        .select("*")
+        .order("data", { ascending: true });
 
       if (error) throw error;
 
       // Formatar os dados para o formato esperado pelo componente
-      const competicoesFormatadas: Competicao[] = data.map(comp => ({
+      const competicoesFormatadas: Competicao[] = data.map((comp) => ({
         id: comp.id,
         titulo: comp.titulo,
         descricao: comp.descricao,
         data: formatarData(comp.data),
         horario: comp.horario,
         local: comp.local,
-        imagem: comp.imagem_url || '/images/default-competition.jpg',
-        limiteCompetidores: comp.limiteCompetidores
+        imagem: comp.imagem_url || "/images/default-competition.jpg",
+        limiteCompetidores: comp.limiteCompetidores,
       }));
 
       setCompeticoes(competicoesFormatadas);
-
     } catch (error: any) {
       console.error("Erro ao buscar competições:", error);
       setError("Não foi possível carregar as competições");
@@ -98,7 +95,6 @@ export function Home() {
       
       setSeminarios(seminariosFormatados);
       */
-
     } catch (error: any) {
       console.error("Erro ao buscar seminários:", error);
     }
@@ -106,48 +102,20 @@ export function Home() {
 
   // Função auxiliar para formatar data
   const formatarData = (dataString: string): string => {
-    if (!dataString) return '';
-    
-    const data = new Date(dataString + 'T00:00:00');
-    
-    return data.toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric'
+    if (!dataString) return "";
+
+    const data = new Date(dataString + "T00:00:00");
+
+    return data.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
     });
   };
 
   return (
     <>
-      <section className={styles.hero}>
-        <video
-          className={styles.heroVideo}
-          src="/videos/videoHome.mp4"
-          autoPlay
-          muted
-          playsInline
-          loop
-        />
-        <div className={styles.heroContent}>
-          <img
-            src="/images/logoHome02.png"
-            className={styles.logoPublicano}
-            alt="Logo Publicano"
-          />
-          <h2>Encontre todas as Competições de Jiu-Jitsu em um só lugar</h2>
-          <p>
-            Eventos oficiais, regionais, seminários e cursos tudo organizado
-            para você competir, aprender e evoluir
-          </p>
-          <div className={styles.buttons}>
-            <Button children="Ver próximos eventos" className={stylesButton.botaoVermelho} />
-            <Link to="/PromoteEvent">
-              <Button children="Divulgue seu evento" className={stylesButton.botaoCinza} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    <Advertising />
       <section className={styles.competicoes}>
         <h2>Próximas Competições</h2>
         <Filter />
@@ -170,11 +138,11 @@ export function Home() {
             {competicoes.map((competicao) => (
               <div key={competicao.id} className={styles.divulgacoes}>
                 <div className={styles.topoCard}>
-                  <img 
-                    src={competicao.imagem} 
+                  <img
+                    src={competicao.imagem}
                     alt={competicao.titulo}
                     onError={(e: any) => {
-                      e.target.src = '/images/default-competition.jpg';
+                      e.target.src = "/images/default-competition.jpg";
                     }}
                   />
                   <div className={styles.textoCard}>
@@ -183,11 +151,13 @@ export function Home() {
                     <p>📅 {competicao.data}</p>
                     <p>📍 {competicao.local}</p>
                     {competicao.limiteCompetidores && (
-                      <p>👥 Limite: {competicao.limiteCompetidores} competidores</p>
+                      <p>
+                        👥 Limite: {competicao.limiteCompetidores} competidores
+                      </p>
                     )}
                   </div>
                 </div>
-                <ButtonModel children="Inscreva-se"/>
+                <ButtonModel children="Inscreva-se" />
               </div>
             ))}
           </div>
@@ -237,7 +207,7 @@ export function Home() {
                     <p>{seminario.data}</p>
                   </div>
                 </div>
-                <ButtonModel children="Participe"/>
+                <ButtonModel children="Participe" />
               </div>
             ))}
           </div>
