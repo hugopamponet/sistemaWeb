@@ -28,7 +28,7 @@ export function DefaultSenha() {
           <input type="text" name="lembrar" id="lembrar" />
         </div>
 
-        <Button children="Participe" type='submit' />
+        <Button children='Participe' className={styles.botaoCard} type='submit' />
       </div>
     </>
   );

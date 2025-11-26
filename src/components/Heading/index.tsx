@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import stylesButton from '../Button/styles.module.css'
 
 import { Button } from "../Button";
 import { Link } from "react-router-dom";
@@ -16,8 +17,8 @@ export function Heading() {
               <li><Link to="/competicoes">Competições</Link></li>
               <li><Link to="/seminar">Seminários</Link></li>
               <li><Link to="/courses">Cursos</Link></li>
-              <Link to="/criarConta"><Button children="Criar conta" /></Link>
-              <Link to="/login"><Button children="Login" /></Link>
+              <Link to="/criarConta"><Button children="Criar conta" className={stylesButton.botaoVermelho}/></Link>
+              <Link to="/login"><Button children="Login" className={stylesButton.botaoVermelho}/></Link>
             </ul>
           </nav>
         </div>

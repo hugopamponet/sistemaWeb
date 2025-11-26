@@ -1,3 +1,19 @@
+.botaoVermelho {
+    background-color: var(--button);
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button);
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botaoVermelho:hover {
+    transform: scale(1.05);
+}
+
 .botaoCard {
     background-color: var(--button);
     width: 90%;

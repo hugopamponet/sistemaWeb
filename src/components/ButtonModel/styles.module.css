@@ -1,0 +1,15 @@
+.botaoCard {
+    background-color: var(--button);
+    width: 90%;
+    height: 2.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--button);
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+    align-self: center;
+    transition: transform 0.2s;
+}
+
+.botaoCard:hover {
+    transform: scale(1.05);
+}

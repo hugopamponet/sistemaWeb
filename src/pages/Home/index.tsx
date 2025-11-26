@@ -1,10 +1,12 @@
 import styles from "./styles.module.css";
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Filter } from "../../components/Filter";
-import { Button } from "../../components/Button"
+import { ButtonModel } from "../../components/ButtonModel"
 import seminarioseMock  from "../../components/mocks/seminarioseMock";
 import competicoesMock from "../../components/mocks/competicoesMock";
+import { PromoteEvent } from "../PromoteEvent";
 
 
 export function Home() {
@@ -77,7 +79,7 @@ export function Home() {
             <button className={styles.botaoVermelho}>
               Ver próximos eventos
             </button>
-            <button className={styles.botaoCinza}>Divulgar seu evento</button>
+            <Link to="/PromoteEvent"><PromoteEvent /></Link>
           </div>
         </div>
       </section>
@@ -106,7 +108,7 @@ export function Home() {
                     <p>{competicao.data}</p>
                   </div>
                 </div>
-                <Button children="Inscreva-se"/>
+                <ButtonModel children="Inscreva-se"/>
               </div>
             ))}
           </div>
@@ -156,7 +158,7 @@ export function Home() {
                     <p>{seminario.data}</p>
                   </div>
                 </div>
-                <Button children="Participe"/>
+                <ButtonModel children="Participe"/>
               </div>
             ))}
           </div>

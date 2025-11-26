@@ -55,38 +55,6 @@
     justify-content: center;
 }
 
-.botaoVermelho {
-    background-color: var(--button);
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    border: 0.1rem solid var(--button);
-    font-family: "Montserrat", sans-serif;
-    color: var(--text);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.botaoVermelho:hover {
-    transform: scale(1.05);
-}
-
-.botaoCinza {
-    background-color: var(--button-cinza);
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    border: 0.1rem solid var(--button-cinza);
-    font-family: "Montserrat", sans-serif;
-    color: var(--text);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.botaoCinza:hover {
-    transform: scale(1.05);
-}
-
 .competicoes {
     padding: 1rem 5rem 0 4.5rem;
     font-family: "Montserrat", sans-serif;

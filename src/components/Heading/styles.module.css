@@ -19,11 +19,22 @@
 
 .navegacao ul {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: space-around;
     font-family: "Montserrat", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.navegacao ul li a {
+    text-decoration: none;
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+}
+
+.navegacao ul li a:visited {
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
 }
 
 .criarConta {
