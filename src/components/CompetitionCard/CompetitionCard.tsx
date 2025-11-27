@@ -1,120 +1,47 @@
-import styles from "./styles.module.css";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-import { useState, useEffect } from "react";
-import { supabase } from "../../lib/supabaseClient";
-import { ButtonModel } from "../ButtonModel";
+const competicoesList = [
+  { id: 1, nome: "Campeonato A" },
+  { id: 2, nome: "Campeonato B" },
+  { id: 3, nome: "Campeonato C" },
+  { id: 4, nome: "Campeonato D" },
+]
 
-interface Competicao {
-  id: number;
-  titulo: string;
-  descricao: string;
-  data: string;
-  horario: string;
-  local: string;
-  imagem: string;
-  limiteCompetidores?: number;
-}
-
-export function CompetitionCard() {
-  const [competicoes, setCompeticoes] = useState<Competicao[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchCompeticoes();
-  }, []);
-
-  const fetchCompeticoes = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-
-      const { data, error } = await supabase
-        .from("Competicoes")
-        .select("*")
-        .order("data", { ascending: true });
-
-      if (error) throw error;
-
-      const competicoesFormatadas: Competicao[] = data.map((comp) => ({
-        id: comp.id,
-        titulo: comp.titulo,
-        descricao: comp.descricao,
-        data: formatarData(comp.data),
-        horario: comp.horario,
-        local: comp.local,
-        imagem: comp.imagem_url || "/images/default-competition.jpg",
-        limiteCompetidores: comp.limiteCompetidores,
-      }));
-
-      setCompeticoes(competicoesFormatadas);
-    } catch (error: any) {
-      console.error("Erro ao buscar competições:", error);
-      setError("Não foi possível carregar as competições");
-      setCompeticoes([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const formatarData = (dataString: string): string => {
-    if (!dataString) return "";
-
-    const data = new Date(dataString + "T00:00:00");
-
-    return data.toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-  };
-
+function CompetitionCard() {
   return (
     <>
-      <section className={styles.competicoes}>
-        {loading ? (
-          <div className={styles.mensagemVazia}>
-            <p>Carregando eventos...</p>
-          </div>
-        ) : error ? (
-          <div className={styles.mensagemVazia}>
-            <p>{error}</p>
-            <button onClick={fetchCompeticoes}>Tentar novamente</button>
-          </div>
-        ) : competicoes.length === 0 ? (
-          <div className={styles.mensagemVazia}>
-            <p>Ainda não temos competições programadas</p>
-          </div>
-        ) : (
-          <div className={styles.container}>
-            {competicoes.map((competicao) => (
-              <div key={competicao.id} className={styles.divulgacoes}>
-                <div className={styles.topoCard}>
-                  <img
-                    src={competicao.imagem}
-                    alt={competicao.titulo}
-                    onError={(e: any) => {
-                      e.target.src = "/images/default-competition.jpg";
-                    }}
-                  />
-                  <div className={styles.textoCard}>
-                    <h3>{competicao.titulo}</h3>
-                    <p>{competicao.descricao}</p>
-                    <p>📅 {competicao.data}</p>
-                    <p>📍 {competicao.local}</p>
-                    {competicao.limiteCompetidores && (
-                      <p>
-                        👥 Limite: {competicao.limiteCompetidores} competidores
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <ButtonModel children="Inscreva-se" />
-              </div>
-            ))}
-          </div>
+      <Box sx={{ display: "flex", gap: 5, margin:5}}>
+        {competicoesList.map((evento) =>
+          <Card key={evento.id} sx={{
+            width: 300,
+            backgroundColor: "#0a0a0a",
+            color: "white",
+            textAlign: "center"
+          }}>
+            <CardMedia
+              component="img"
+              alt=''
+              height={150}
+              image='public/images/fight01.png'
+            
+            />
+            <CardContent>
+              <Typography>
+                {evento.nome}
+              </Typography>
+            </CardContent>
+
+          </Card>
         )}
-      </section>
+      </Box>
     </>
-  );
+  )
 }
+
+export default CompetitionCard

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Filter } from "../../components/Filter";
 import { ButtonModel } from "../../components/ButtonModel";
 import { Advertising } from "../../components/Advertising";
-import { CompetitionCard } from "../../components/CompetitionCard/CompetitionCard";
+import CompetitionCard  from "../../components/CompetitionCard/CompetitionCard";
 
 interface Seminario {
   id: number;

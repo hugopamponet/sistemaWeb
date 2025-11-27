@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { Filter } from "../../components/Filter";
 import { Advertising } from "../../components/Advertising";
-import { CompetitionCard } from "../../components/CompetitionCard/CompetitionCard";
+import CompetitionCard  from "../../components/CompetitionCard/CompetitionCard";
 
 export function Competicoes() {
   return (
