@@ -32,12 +32,13 @@ function CompetitionCard() {
                 height={150}
                 image='public/images/fight01.png'
               />
-              <CardContent>
-                <Typography>
-                  {evento.nome}
-                </Typography>
-              </CardContent>
             </CardActionArea>
+            <CardContent>
+              <Typography>
+                {evento.nome}
+              </Typography>
+            </CardContent>
+
           </Card>
         )}
       </Box>
