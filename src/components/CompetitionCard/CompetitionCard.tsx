@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
 
 const competicoesList = [
   { id: 1, nome: "Campeonato A" },
@@ -16,7 +17,7 @@ const competicoesList = [
 function CompetitionCard() {
   return (
     <>
-      <Box sx={{ display: "flex", gap: 5, margin:5}}>
+      <Box sx={{ display: "flex", gap: 5, margin: 5 }}>
         {competicoesList.map((evento) =>
           <Card key={evento.id} sx={{
             width: 300,
@@ -24,19 +25,19 @@ function CompetitionCard() {
             color: "white",
             textAlign: "center"
           }}>
-            <CardMedia
-              component="img"
-              alt=''
-              height={150}
-              image='public/images/fight01.png'
-            
-            />
-            <CardContent>
-              <Typography>
-                {evento.nome}
-              </Typography>
-            </CardContent>
-
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt=''
+                height={150}
+                image='public/images/fight01.png'
+              />
+              <CardContent>
+                <Typography>
+                  {evento.nome}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         )}
       </Box>
