@@ -9,20 +9,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { supabase } from "../../lib/supabaseClient";
 import { useState, useEffect } from "react";
 import { ButtonModel } from '../ButtonModel';
-
-interface Competicao {
-  id: number;
-  titulo: string;
-  descricao: string;
-  data: string;
-  horario: string;
-  local: string;
-  imagem: string;
-  limiteCompetidores?: number;
-}
+import { Competition } from '../../types';
 
 function CompetitionCard() {
-  const [competicoes, setCompeticoes] = useState<Competicao[]>([]);
+  const [competicoes, setCompeticoes] = useState<Competition[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,7 +32,7 @@ function CompetitionCard() {
 
       if (error) throw error;
 
-      const competicoesFormatadas: Competicao[] = data.map((comp) => ({
+      const competicoesFormatadas: Competition[] = data.map((comp) => ({
         id: comp.id,
         titulo: comp.titulo,
         descricao: comp.descricao,
