@@ -141,7 +141,6 @@ export function DefaultEndereco() {
           </div>
         </div>
         
-        { }
         <div className={styles.camposLinha}>
           <div>
             <label htmlFor="numero">Número</label>

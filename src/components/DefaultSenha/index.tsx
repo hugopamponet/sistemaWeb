@@ -20,6 +20,10 @@ export function DefaultSenha() {
             <label htmlFor="confirmar">Confirmar a senha</label>
             <input type="password" name="confirmar" id="confirmar" />
           </div>
+          <div>
+            <label htmlFor="email">E-mail</label>
+            <input type="email" name="email" id="email" />
+          </div>
         </div>
         
         { }
@@ -28,7 +32,7 @@ export function DefaultSenha() {
           <input type="text" name="lembrar" id="lembrar" />
         </div>
 
-        <Button children='Participe' className={styles.botaoCard} type='submit' />
+        <Button children='Inscreva-se' className={styles.botaoCard} type='submit' />
       </div>
     </>
   );

@@ -7,11 +7,10 @@ export function Teams() {
         <div>
           <h1>Equipe</h1>
         </div>
-        
         { }
         <div className={styles.camposLinha}>
           <div>
-            <label htmlFor="escola">Escola</label>
+            <label htmlFor="escola">Equipe</label>
             <select id="escola" name="escola">
               <option value="">Selecione</option>
             </select>

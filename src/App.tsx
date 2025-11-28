@@ -8,7 +8,8 @@ import { Footer } from "./components/Footer";
 import { Competicoes } from "./pages/Competicoes";
 import { Seminar } from "./pages/Seminar";
 import { Courses } from "./pages/Courses/index";
-import { PromoteEvent } from "./pages/PromoteEvent";
+import { PromoteEvent } from "./components/PromoteEvent";
+import { ChampionshipRegistration } from "./components/ChampionshipRegistration";
 
 export function App() {
   return (
@@ -21,6 +22,7 @@ export function App() {
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/PromoteEvent" element={<PromoteEvent />} />
+          <Route path="/inscricao/:id" element={<ChampionshipRegistration />} />
         </Routes>
       </BrowserRouter>
       <Footer />

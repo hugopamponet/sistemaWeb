@@ -6,5 +6,7 @@ export interface Competition {
   horario: string;
   local: string;
   imagem: string;
+  valor: string;
+  prazoDeInscricao: string;
   limiteCompetidores?: number;
 }

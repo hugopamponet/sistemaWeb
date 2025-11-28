@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
 import { supabase } from '../../lib/supabaseClient'
+import { DefaultEndereco } from '../DefaultEndereco'
 
 interface FormData {
   titulo: string
   data: string
   horario: string
   local: string
+  valor: string
+  prazoDeInscricao: string
   descricao: string
+
   limiteCompetidores: string
 }
 
@@ -18,6 +22,8 @@ export function PromoteEvent() {
     horario: '',
     local: '',
     descricao: '',
+    valor: '',
+    prazoDeInscricao: '',
     limiteCompetidores: ''
   })
   
@@ -25,7 +31,6 @@ export function PromoteEvent() {
   const [uploading, setUploading] = useState(false)
   const [previewUrl, setPreviewUrl] = useState<string | null>(null)
 
-  // Handler para mudanças nos inputs
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -34,13 +39,11 @@ export function PromoteEvent() {
     }))
   }
 
-  // Handler para seleção de imagem
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const arquivo = e.target.files?.[0]
     
     if (!arquivo) return
 
-    // Validações
     const tiposPermitidos = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg']
     const tamanhoMaximo = 5 * 1024 * 1024 // 5MB
 
@@ -56,7 +59,6 @@ export function PromoteEvent() {
 
     setImagem(arquivo)
 
-    // Criar preview da imagem
     const reader = new FileReader()
     reader.onloadend = () => {
       setPreviewUrl(reader.result as string)
@@ -64,7 +66,6 @@ export function PromoteEvent() {
     reader.readAsDataURL(arquivo)
   }
 
-  // Função para fazer upload da imagem
   const uploadImagem = async (arquivo: File): Promise<string> => {
     try {
       const fileExt = arquivo.name.split('.').pop()
@@ -84,7 +85,6 @@ export function PromoteEvent() {
         throw new Error(`Erro ao fazer upload: ${uploadError.message}`)
       }
 
-      // Obter URL pública
       const { data } = supabase.storage
         .from('competicao-images')
         .getPublicUrl(fileName)
@@ -98,7 +98,6 @@ export function PromoteEvent() {
     }
   }
 
-  // Submeter formulário
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setUploading(true)
@@ -106,14 +105,12 @@ export function PromoteEvent() {
     try {
       let imagemUrl: string | null = null
 
-      // Upload da imagem se houver
       if (imagem) {
         console.log('Fazendo upload da imagem...')
         imagemUrl = await uploadImagem(imagem)
         console.log('Upload concluído:', imagemUrl)
       }
 
-      // Inserir dados na tabela
       console.log('Inserindo dados na tabela...')
       const { data, error } = await supabase
         .from('Competicoes')
@@ -125,6 +122,8 @@ export function PromoteEvent() {
             local: formData.local,
             imagem_url: imagemUrl,
             descricao: formData.descricao,
+            valor: formData.valor,
+            prazoDeInscricao: formData.prazoDeInscricao,
             limiteCompetidores: formData.limiteCompetidores ? parseInt(formData.limiteCompetidores) : null
           }
         ])
@@ -138,19 +137,19 @@ export function PromoteEvent() {
       console.log('Competição cadastrada:', data)
       alert('Competição cadastrada com sucesso!')
       
-      // Limpar formulário
       setFormData({
         titulo: '',
         data: '',
         horario: '',
         local: '',
         descricao: '',
+        valor: '',
+        prazoDeInscricao: '',
         limiteCompetidores: ''
       })
       setImagem(null)
       setPreviewUrl(null)
       
-      // Limpar input de arquivo
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
       if (fileInput) fileInput.value = ''
 
@@ -164,9 +163,35 @@ export function PromoteEvent() {
 
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <h2>Cadastrar Nova Competição</h2>
+      <h2>Cadastrar Competição</h2>
       
       <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Imagem da Competição</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            style={{ width: '100%', padding: '8px' }}
+          />
+          
+          {previewUrl && (
+            <div style={{ marginTop: '10px' }}>
+              <img 
+                src={previewUrl} 
+                alt="Preview" 
+                style={{ 
+                  maxWidth: '100%', 
+                  maxHeight: '200px', 
+                  objectFit: 'cover',
+                  borderRadius: '8px',
+                  border: '2px solid #ddd'
+                }}
+              />
+            </div>
+          )}
+        </div>
+
         <div style={{ marginBottom: '15px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>Título *</label>
           <input
@@ -230,6 +255,26 @@ export function PromoteEvent() {
         </div>
 
         <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Valor</label>
+          <input
+            type="text"
+            name="valor"
+            value={formData.valor}
+            onChange={handleChange}
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+        </div>
+
+        <label style={{ display: 'block', marginBottom: '5px' }}>Prazo de inscrição</label>
+          <input
+            type="text"
+            name="prazoDeInscrição"
+            value={formData.prazoDeInscricao}
+            onChange={handleChange}
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+
+        <div style={{ marginBottom: '15px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>Descrição *</label>
           <textarea
             name="descricao"
@@ -240,32 +285,6 @@ export function PromoteEvent() {
             placeholder="Descreva os detalhes da competição..."
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           />
-        </div>
-
-        <div style={{ marginBottom: '15px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>Imagem da Competição</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            style={{ width: '100%', padding: '8px' }}
-          />
-          
-          {previewUrl && (
-            <div style={{ marginTop: '10px' }}>
-              <img 
-                src={previewUrl} 
-                alt="Preview" 
-                style={{ 
-                  maxWidth: '100%', 
-                  maxHeight: '200px', 
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  border: '2px solid #ddd'
-                }}
-              />
-            </div>
-          )}
         </div>
 
         <button 

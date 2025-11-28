@@ -2,9 +2,9 @@ import styles from "./styles.module.css";
 
 import { useState, useEffect } from "react";
 import { Filter } from "../../components/Filter";
-import { ButtonModel } from "../../components/ButtonModel";
 import { Advertising } from "../../components/Advertising";
-import CompetitionCard  from "../../components/CompetitionCard/CompetitionCard";
+import { CompetitionCard } from "../../components/CompetitionCard";
+
 
 interface Seminario {
   id: number;
@@ -101,7 +101,7 @@ export function Home() {
                     <p>{seminario.data}</p>
                   </div>
                 </div>
-                <ButtonModel children="Participe" />
+                
               </div>
             ))}
           </div>
