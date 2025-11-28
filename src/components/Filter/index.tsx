@@ -50,12 +50,6 @@ export function Filter() {
           </option>
         ))}
       </select>
-
-      <select className={styles.sexo}>
-        <option value="">Sexo</option>
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-      </select>
     </div>
   );
 }
