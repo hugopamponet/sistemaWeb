@@ -9,7 +9,9 @@ export function Heading() {
     <>
       <header>
         <div className={styles.menu}>
-          <img src="/images/logoHome.png" alt="Logo Publicando" className={styles.logoP} />
+          <Link to="/">
+            <img src="/images/logoHome.png" alt="Logo Publicando" className={styles.logoP} />
+          </Link>
           <h1 className={styles.title}>Jiu-Jitsu Eventos</h1>
           <nav className={styles.navegacao}>
             <ul>
