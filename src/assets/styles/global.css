@@ -11,3 +11,8 @@ body {
     color: var(--text);
     max-width: auto;
 }
+
+/* Previne scroll quando menu mobile está aberto */
+body.menu-aberto {
+  overflow: hidden;
+}
