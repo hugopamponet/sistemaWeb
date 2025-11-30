@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import { supabase } from "../../lib/supabaseClient";
-import { DefaultEndereco } from "../DefaultEndereco";
 import { DefaultInput } from "../DefaultInput";
 
 interface FormData {
