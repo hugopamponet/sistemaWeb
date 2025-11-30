@@ -56,3 +56,8 @@
     margin: 0.3rem 0;
     color: #cfcfcf;
 }
+
+.button {
+    display: flex;
+    align-items: center;
+}

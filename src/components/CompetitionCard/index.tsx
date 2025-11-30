@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import stylesButto from "../Button/styles.module.css"
 
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -95,8 +96,8 @@ export function CompetitionCard() {
                     <p>{competicao.descricao}</p>
                     <p>📅 {competicao.data}</p>
                     <p>📍 {competicao.local}</p>
-                    <p> 💲{competicao.valor}</p>
-                    <p> 💲{competicao.prazoDeInscricao}</p>
+                    <p>💲{competicao.valor}</p>
+                    <p>⌛{competicao.prazoDeInscricao}</p>
                     {competicao.limiteCompetidores && (
                       <p>
                         👥 Limite: {competicao.limiteCompetidores} competidores
@@ -104,9 +105,11 @@ export function CompetitionCard() {
                     )}
                   </div>
                 </div>
+                <div className={styles.button}>
                 <Link to={`/inscricao/${competicao.id}`}>
-                  <Button children="Inscreva-se" className="vamos ver" />
+                  <Button children="Inscreva-se" className={stylesButto.botaoVermelho} />
                 </Link>
+                </div>
               </div>
             ))}
           </div>
