@@ -84,7 +84,7 @@ export function CompetitionCard() {
             {competicoes.map((competicao) => (
               <div key={competicao.id} className={styles.divulgacoes}>
                 <div className={styles.topoCard}>
-                  <img
+                  <img className={styles.imgCard}
                     src={competicao.imagem}
                     alt={competicao.titulo}
                     onError={(e: any) => {

@@ -33,9 +33,16 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     gap: 1.5rem;
 }
 
+.imgCard {
+    max-width: 15rem;
+}
+
+/*
 .topoCard {
     display: flex;
     gap: 1.2rem;
@@ -56,7 +63,7 @@
     margin: 0.3rem 0;
     color: #cfcfcf;
 }
-
+*/
 .button {
     display: flex;
     align-items: center;
