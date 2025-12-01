@@ -1,13 +1,15 @@
+import styles from './styles.module.css'
+
 import { DefaultEndereco } from "../../components/DefaultEndereco";
-import { DefaultInput } from "../../components/DefaultInput";
 import { DefaultSenha } from "../../components/DefaultSenha";
+import { DefaultUser } from "../../components/DefaultUser";
 
 export function CreateUser() {
     return(
         <>
-        <div className="container">
+        <div className={styles.container}>
             <div className="dadosBasicos">
-                <DefaultInput children="Nome" className="inputName" type="text" value="nome"  />
+                <DefaultUser />
             </div>
             <div className="endereco">
                 <DefaultEndereco />
