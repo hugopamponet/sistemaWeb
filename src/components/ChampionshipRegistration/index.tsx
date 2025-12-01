@@ -6,7 +6,7 @@ import { StudentRegistration } from "../StudentRegistration";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../../lib/supabaseClient";
-import { Competition } from "../../types";
+import type { Competition } from "../../types";
 
 export function ChampionshipRegistration() {
   const { id } = useParams<{ id: string }>();

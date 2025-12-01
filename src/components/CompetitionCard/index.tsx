@@ -3,7 +3,7 @@ import stylesButto from "../Button/styles.module.css"
 
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabaseClient";
-import { Competition } from "../../types";
+import type { Competition } from "../../types";
 import { Button } from "../Button";
 import { Link } from "react-router-dom";
 
