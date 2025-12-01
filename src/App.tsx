@@ -10,6 +10,7 @@ import { Seminar } from "./pages/Seminar";
 import { Courses } from "./pages/Courses/index";
 import { PromoteEvent } from "./components/PromoteEvent";
 import { ChampionshipRegistration } from "./components/ChampionshipRegistration";
+import { CreateUser } from "./pages/CreateUser";
 
 export function App() {
   return (
@@ -21,6 +22,7 @@ export function App() {
           <Route path="/competicoes" element={<Competicoes />} />
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/CreateUser" element={<CreateUser />} />
           <Route path="/PromoteEvent" element={<PromoteEvent />} />
           <Route path="/inscricao/:id" element={<ChampionshipRegistration />} />
         </Routes>

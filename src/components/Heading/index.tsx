@@ -28,8 +28,7 @@ export function Heading() {
           </Link>
           
           <h1 className={styles.title}>Jiu-Jitsu Eventos</h1>
-          
-          {/* Botão Hambúrguer */}
+
           <button 
             className={styles.hamburger}
             onClick={toggleMenu}
@@ -40,14 +39,13 @@ export function Heading() {
             <span className={menuAberto ? styles.active : ''}></span>
           </button>
 
-          {/* Menu de Navegação */}
           <nav className={`${styles.navegacao} ${menuAberto ? styles.navAberta : ''}`}>
             <ul>
               <li><Link to="/" onClick={fecharMenu}>Inicio</Link></li>
               <li><Link to="/competicoes" onClick={fecharMenu}>Competições</Link></li>
               <li><Link to="/seminar" onClick={fecharMenu}>Seminários</Link></li>
               <li><Link to="/courses" onClick={fecharMenu}>Cursos</Link></li>
-              <Link to="/criarConta" onClick={fecharMenu}>
+              <Link to="/CreateUser" onClick={fecharMenu}>
                 <Button children="Criar conta" className={stylesButton.botaoVermelho}/>
               </Link>
               <Link to="/login" onClick={fecharMenu}>
@@ -56,8 +54,7 @@ export function Heading() {
             </ul>
           </nav>
         </div>
-        
-        {/* Overlay quando menu está aberto */}
+
         {menuAberto && (
           <div 
             className={styles.overlay} 
