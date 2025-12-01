@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  width: 100%;
   min-height: 100vh;
-  padding: 4rem 0 0 4rem;
+  padding: 0;
   overflow: hidden;
+  margin: 0;
 }
 
 .heroVideo {
@@ -21,7 +22,6 @@
   object-fit: cover;
   z-index: 1;
   filter: brightness(50%) sepia(100%) hue-rotate(180deg) saturate(300%);
-  display: block;
 }
 
 .heroContent {
@@ -29,11 +29,14 @@
   z-index: 2;
   text-align: center;
   max-width: 800px;
-  padding: 0 2rem;
+  padding: 2rem;
+  width: 100%;
 }
 
 .logoPublicano {
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
 }
 
 .heroContent h2 {
@@ -57,13 +60,52 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 360px) and (max-width: 414px) {
-    .hero {
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
     padding: 0;
+  }
+
+  .heroContent {
+    padding: 1rem;
+  }
+
+  .logoPublicano {
+    max-width: 12rem;
+  }
+
+  .heroContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .buttons button,
+  .buttons a button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .heroContent h2 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 1.2rem;
+  }
+
+  .logoPublicano {
+    max-width: 15rem;
   }
 }

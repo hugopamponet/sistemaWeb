@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .competicoes {
-    padding: 1rem 5rem 0 4.5rem;
-    font-family: "Montserrat", sans-serif;
+  padding: 1rem 5rem 0 4.5rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
-    display: grid;
-    padding: 1.5rem 0 0 0;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  display: grid;
+  padding: 1.5rem 0 0 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .mensagemVazia {
@@ -27,44 +27,54 @@
 }
 
 .divulgacoes {
-    background-color: var(--button-cinza);
-    padding: 1.5rem;
-    border: 1px solid var(--button-cinza);
-    border-radius: 10px;
+  background-color: var(--button-cinza);
+  padding: 1.5rem;
+  border: 1px solid var(--button-cinza);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
+.imgCard {
+  max-width: 15rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 1.5rem;
-}
+  }
 
-.imgCard {
-    max-width: 15rem;
-}
-
-/*
-.topoCard {
+  .divulgacoes {
     display: flex;
-    gap: 1.2rem;
-}
-
-.topoCard img {
-    width: 120px;
-    height: auto;
-    border-radius: 8px;
-}
-
-.textoCard h3 {
-    font-size: 1.25rem;
-    margin: 0 0 .5rem 0;
-}
-
-.textoCard p {
-    margin: 0.3rem 0;
-    color: #cfcfcf;
-}
-*/
-.button {
-    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .divulgacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 }

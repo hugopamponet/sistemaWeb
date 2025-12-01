@@ -1,126 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .competicoes {
-    padding: 1rem 5rem 0 4.5rem;
-    font-family: "Montserrat", sans-serif;
+  padding: 2rem 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
-    display: grid;
-    padding: 1.5rem 0 0 0;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  display: grid;
+  padding: 1.5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .divulgacoes {
-    background-color: var(--button-cinza);
-    padding: 1.5rem;
-    border: 1px solid var(--button-cinza);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  background-color: var(--button-cinza);
+  padding: 1.5rem;
+  border: 1px solid var(--button-cinza);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .topoCard {
-    display: flex;
-    gap: 1.2rem;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .topoCard img {
-    width: 120px;
-    height: auto;
-    border-radius: 8px;
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
 }
 
 .textoCard h3 {
-    font-size: 1.25rem;
-    margin: 0 0 .5rem 0;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .textoCard p {
-    margin: 0.3rem 0;
-    color: #cfcfcf;
+  margin: 0.3rem 0;
+  color: #cfcfcf;
+}
+
+.mensagemVazia {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #888;
 }
 
 .eventoDestaque {
-    padding: 2rem 0 2rem 4.5rem;
-    font-family: "Montserrat", sans-serif;
+  padding: 2rem 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.eventoDestaque h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .todosEventos {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-around;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .eventoCard {
-    padding-top: 1rem;
+  padding-top: 1rem;
+}
+
+.cardEventos1,
+.cardEventos2,
+.cardEventos3 {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .cardEventos1 {
-    width: 20rem;
-    height: auto;
-    padding: 0.5rem;
-    background-color: var(--card-evento1);
-    border: 1px solid var(--card-evento1);
-    border-radius: 10px;
-}
-
-.cardEventos1 h2 {
-    padding-left: 2rem;
+  background-color: var(--card-evento1);
+  border: 1px solid var(--card-evento1);
 }
 
 .cardEventos2 {
-    width: 20rem;
-    height: auto;
-    padding: 0.5rem;
-    background-color: var(--card-evento2);
-    border: 1px solid var(--card-evento2);
-    border-radius: 10px;
-}
-
-.cardEventos2 h2 {
-    padding-left: 2rem;
+  background-color: var(--card-evento2);
+  border: 1px solid var(--card-evento2);
 }
 
 .cardEventos3 {
-    width: 20rem;
-    height: auto;
-    padding: 0.5rem;
-    background-color: var(--card-evento3);
-    border: 1px solid var(--card-evento3);
-    border-radius: 10px;
+  background-color: var(--card-evento3);
+  border: 1px solid var(--card-evento3);
 }
 
-.cardEventos3 h2 {
-    padding-left: 2rem;
+.cardEventos1 h3,
+.cardEventos2 h3,
+.cardEventos3 h3 {
+  padding-left: 2rem;
 }
 
-@media (min-width: 360px) and (max-width: 414px) {
-    .competicoes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+@media (max-width: 768px) {
+  .competicoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .competicoes h2 {
-        text-align: center;
-    }
+  .competicoes h2 {
+    text-align: center;
+  }
 
-    .eventoDestaque {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    }
+  .eventoDestaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
 
-    .todosEventos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .todosEventos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .competicoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .competicoes h2 {
+    text-align: center;
+  }
+
+  .eventoDestaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .todosEventos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

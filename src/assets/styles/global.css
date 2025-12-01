@@ -1,18 +1,22 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
+html,
 body {
-    background: var(--primary);
-    color: var(--text);
-    max-width: auto;
+  width: 100%;
+  background: var(--primary);
+  color: var(--text);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* Previne scroll quando menu mobile está aberto */
-body.menu-aberto {
-  overflow: hidden;
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
