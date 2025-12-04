@@ -10,7 +10,6 @@
 
 .inputsPesquisas select{
     width: 10rem;
-    height: 2rem;
     background-color: var(--button-cinza);
     border: 1px solid var(--button-cinza);
     border-radius: 10px;

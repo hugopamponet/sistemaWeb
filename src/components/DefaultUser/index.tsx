@@ -36,6 +36,42 @@ export function DefaultUser() {
               <option value="feminino">Feminino</option>
             </select>
           </div>
+          <div className="faixaInput">
+            <label htmlFor="faixa">Faixa</label>
+            <select id="faixa" name="faixa">
+              <option value="">Selecione</option>
+              <option value="branca">Branca</option>
+              <option value="azul">Azul</option>
+              <option value="roxa">Roxa</option>
+              <option value="marrom">Marrom</option>
+              <option value="preta">Preta</option>
+            </select>
+          </div>
+          <div className="pesoInput">
+            <label htmlFor="peso">Peso</label>
+            <select id="peso" name="peso">
+              <option value="">Selecione</option>
+              <option value="galo">Galo</option>
+              <option value="pluma">Pluma</option>
+              <option value="pena">Pena</option>
+              <option value="leve">Leve</option>
+              <option value="medio">Médio</option>
+              <option value="meioPesado">Meio-Pesado</option>
+              <option value="pesado">Pesado</option>
+              <option value="superPesado">Super-Pesado</option>
+              <option value="pesadíssimo">Pesadíssimo</option>
+            </select>
+          </div>
+          <div className="ctInput">
+            <label htmlFor="ct">CT</label>
+            <select id="ct" name="ct">
+              <option value="">Selecione</option>
+            </select>
+          </div>
+          <div className="professorInput">
+            <label htmlFor="professor">Professor</label>
+            <input type="text" name="professor" id="professor" />
+          </div>
         </div>
       </section>
     </>
