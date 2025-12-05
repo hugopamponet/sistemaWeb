@@ -1,33 +1,15 @@
-import "../src/assets/styles/theme.css";
-import "../src/assets/styles/global.css";
+import Appbar from "./components/Appbar/Appbar"
+import AppRoutes from "./Routes/AppRoutes"
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Heading } from "./components/Heading";
-import { Home } from "../src/pages/Home/index";
-import { Footer } from "./components/Footer";
-import { Competicoes } from "./pages/Competicoes";
-import { Seminar } from "./pages/Seminar";
-import { Courses } from "./pages/Courses/index";
-import { PromoteEvent } from "./components/PromoteEvent";
-import { ChampionshipRegistration } from "./components/ChampionshipRegistration";
-import { CreateUser } from "./pages/CreateUser";
 
-export function App() {
+function App() {
   return (
     <>
-      <BrowserRouter>
-        <Heading />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/competicoes" element={<Competicoes />} />
-          <Route path="/seminar" element={<Seminar />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/CreateUser" element={<CreateUser />} />
-          <Route path="/PromoteEvent" element={<PromoteEvent />} />
-          <Route path="/inscricao/:id" element={<ChampionshipRegistration />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <Appbar/>
+      <AppRoutes />
     </>
-  );
+
+  )
 }
+
+export default App
