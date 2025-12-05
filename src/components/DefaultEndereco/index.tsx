@@ -2,11 +2,11 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 
 interface DefaultEnderecoProps {
-  formData: any;
-  updateEndereco: (data: any) => void;
+  formData?: any;
+  updateEndereco?: (data: any) => void;
 }
 
-export function DefaultEndereco({ formData, updateEndereco }: DefaultEnderecoProps) {
+export function DefaultEndereco({ formData = {}, updateEndereco = () => {} }: DefaultEnderecoProps) {
   const [loading, setLoading] = useState(false);
 
   const buscarCEP = async (cep: string) => {

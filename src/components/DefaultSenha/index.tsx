@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Button } from '../Button';
 
 interface DefaultSenhaProps {
-  formData: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  loading: boolean;
+  formData?: any;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  loading?: boolean;
 }
 
 export function DefaultSenha({ formData, handleChange, loading }: DefaultSenhaProps) {
