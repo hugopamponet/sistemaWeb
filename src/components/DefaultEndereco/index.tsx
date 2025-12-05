@@ -1,21 +1,15 @@
 import styles from './styles.module.css';
-
 import { useState } from 'react';
 
-export function DefaultEndereco() {
+interface DefaultEnderecoProps {
+  formData: any;
+  updateEndereco: (data: any) => void;
+}
+
+export function DefaultEndereco({ formData, updateEndereco }: DefaultEnderecoProps) {
   const [loading, setLoading] = useState(false);
-  const [endereco, setEndereco] = useState({
-    cep: '',
-    logradouro: '',
-    bairro: '',
-    cidade: '',
-    estado: '',
-    complemento: '',
-    numero: ''
-  });
 
   const buscarCEP = async (cep: string) => {
-
     const cepLimpo = cep.replace(/\D/g, '');
 
     if (cepLimpo.length !== 8) {
@@ -34,8 +28,7 @@ export function DefaultEndereco() {
         return;
       }
 
-      setEndereco({
-        ...endereco,
+      updateEndereco({
         cep: cep,
         logradouro: data.logradouro || '',
         bairro: data.bairro || '',
@@ -53,118 +46,120 @@ export function DefaultEndereco() {
 
   const formatarCEP = (valor: string) => {
     const cepLimpo = valor.replace(/\D/g, '');
-    
-    if (cepLimpo.length <= 5) {
-      return cepLimpo;
-    }
-    
+    if (cepLimpo.length <= 5) return cepLimpo;
     return `${cepLimpo.slice(0, 5)}-${cepLimpo.slice(5, 8)}`;
   };
 
   const handleCEPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valorFormatado = formatarCEP(e.target.value);
-    setEndereco({ ...endereco, cep: valorFormatado });
+    updateEndereco({ cep: valorFormatado });
 
     if (valorFormatado.length === 9) {
       buscarCEP(valorFormatado);
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    updateEndereco({ [name]: value });
+  };
+
   return (
-    <>
-      <div className={styles.contentCadastroAluno}>
+    <div className={styles.contentCadastroAluno}>
+      <div>
+        <h1>Endereço</h1>
+      </div>
+      
+      <div>
+        <label htmlFor="cep">CEP *</label>
+        <input 
+          type="text" 
+          name="cep" 
+          id="cep"
+          value={formData.cep || ''} // ← ADICIONE || ''
+          onChange={handleCEPChange}
+          placeholder="00000-000"
+          maxLength={9}
+          required
+        />
+        {loading && <small style={{ color: '#C02434' }}>Buscando CEP...</small>}
+      </div>
+      
+      <div className={styles.camposLinha}>
         <div>
-          <h1>Endereço</h1>
-        </div>
-        
-        { }
-        <div>
-          <label htmlFor="cep">CEP</label>
+          <label htmlFor="logradouro">Endereço *</label>
           <input 
             type="text" 
-            name="cep" 
-            id="cep"
-            value={endereco.cep}
-            onChange={handleCEPChange}
-            placeholder="00000-000"
-            maxLength={9}
+            name="logradouro" 
+            id="logradouro"
+            value={formData.logradouro || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            required
           />
-          {loading && <small style={{ color: '#C02434' }}>Buscando CEP...</small>}
         </div>
-        
-        { }
-        <div className={styles.camposLinha}>
-          <div>
-            <label htmlFor="endereco">Endereço</label>
-            <input 
-              type="text" 
-              name="endereco" 
-              id="endereco"
-              value={endereco.logradouro}
-              onChange={(e) => setEndereco({ ...endereco, logradouro: e.target.value })}
-            />
-          </div>
-          <div>
-            <label htmlFor="bairro">Bairro</label>
-            <input 
-              type="text" 
-              name="bairro" 
-              id="bairro"
-              value={endereco.bairro}
-              onChange={(e) => setEndereco({ ...endereco, bairro: e.target.value })}
-            />
-          </div>
-        </div>
-        
-        { }
-        <div className={styles.camposLinha}>
-          <div>
-            <label htmlFor="cidade">Cidade</label>
-            <input 
-              type="text" 
-              name="cidade" 
-              id="cidade"
-              value={endereco.cidade}
-              onChange={(e) => setEndereco({ ...endereco, cidade: e.target.value })}
-            />
-          </div>
-          <div>
-            <label htmlFor="estado">Estado</label>
-            <input 
-              type="text" 
-              name="estado" 
-              id="estado"
-              value={endereco.estado}
-              onChange={(e) => setEndereco({ ...endereco, estado: e.target.value })}
-              maxLength={2}
-            />
-          </div>
-        </div>
-        
-        <div className={styles.camposLinha}>
-          <div>
-            <label htmlFor="numero">Número</label>
-            <input 
-              type="text" 
-              name="numero" 
-              id="numero"
-              value={endereco.numero}
-              onChange={(e) => setEndereco({ ...endereco, numero: e.target.value })}
-            />
-          </div>
-          <div>
-            <label htmlFor="complemento">Complemento</label>
-            <input 
-              type="text" 
-              name="complemento" 
-              id="complemento"
-              value={endereco.complemento}
-              onChange={(e) => setEndereco({ ...endereco, complemento: e.target.value })}
-              placeholder="Opcional"
-            />
-          </div>
+        <div>
+          <label htmlFor="bairro">Bairro *</label>
+          <input 
+            type="text" 
+            name="bairro" 
+            id="bairro"
+            value={formData.bairro || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            required
+          />
         </div>
       </div>
-    </>
+      
+      <div className={styles.camposLinha}>
+        <div>
+          <label htmlFor="cidade">Cidade *</label>
+          <input 
+            type="text" 
+            name="cidade" 
+            id="cidade"
+            value={formData.cidade || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="estado">Estado *</label>
+          <input 
+            type="text" 
+            name="estado" 
+            id="estado"
+            value={formData.estado || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            maxLength={2}
+            required
+          />
+        </div>
+      </div>
+      
+      <div className={styles.camposLinha}>
+        <div>
+          <label htmlFor="numero">Número *</label>
+          <input 
+            type="text" 
+            name="numero" 
+            id="numero"
+            value={formData.numero || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="complemento">Complemento</label>
+          <input 
+            type="text" 
+            name="complemento" 
+            id="complemento"
+            value={formData.complemento || ''} // ← ADICIONE || ''
+            onChange={handleChange}
+            placeholder="Opcional"
+          />
+        </div>
+      </div>
+    </div>
   );
 }

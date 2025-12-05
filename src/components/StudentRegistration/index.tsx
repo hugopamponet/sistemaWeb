@@ -1,8 +1,8 @@
 import styles from './styles.module.css'
 
-import { DefaultEndereco } from '../DefaultEndereco';
-import { DefaultSenha } from '../DefaultSenha'
 import { Teams } from '../Teams';
+import { DefaultEndereco } from '../DefaultEndereco';
+import { DefaultSenha } from '../DefaultSenha';
 
 export function StudentRegistration() {
   return (
